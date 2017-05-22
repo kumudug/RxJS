@@ -1,0 +1,31 @@
+{
+  "name": "rxjs-test",
+  "version": "1.0.0",
+  "description": "http://reactivex.io/rxjs/ - RxJS is ReaxtiveX in javascript",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --watch --inline",
+    "postinstall": "typings install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kumudug/RxJS.git"
+  },
+  "author": "Kumudu Gunasekara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kumudug/RxJS/issues"
+  },
+  "homepage": "https://github.com/kumudug/RxJS#readme",
+  "dependencies": {
+    "rxjs": "^5.4.0"
+  },
+  "devDependencies": {
+    "ts-loader": "^2.1.0",
+    "typescript": "^2.3.3",
+    "typings": "^2.1.1",
+    "webpack": "^2.6.0",
+    "webpack-dev-server": "^2.4.5"
+  }
+}
