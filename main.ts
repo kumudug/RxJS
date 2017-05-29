@@ -56,3 +56,25 @@ let source2 = Observable.create(observer => {
     observer.complete();
 });
 source2.subscribe(new MyObserver());
+
+let source3 = Observable.create(observer => {
+    let index = 0;
+    let produceValue = () => {
+        observer.next(numbers[index++]);
+
+        if(index < numbers.length){
+            setTimeout(produceValue, 2000);
+        }
+        else{
+            observer.complete();
+        }
+    }
+
+    produceValue();
+});
+console.log(`With delay`);
+source3.subscribe(
+    value => console.log(`value: ${value}`),
+    e => console.log(`error: ${e}`),
+    () => console.log(`complete`)
+);
