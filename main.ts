@@ -78,3 +78,29 @@ source3.subscribe(
     e => console.log(`error: ${e}`),
     () => console.log(`complete`)
 );
+
+
+
+let source4 = Observable.create(observer => {
+    let index = 0;
+    let produceValue = () => {
+        observer.next(numbers[index++]);
+
+        if(index < numbers.length){
+            setTimeout(produceValue, 2000);
+        }
+        else{
+            observer.complete();
+        }
+    }
+
+    produceValue();
+}).map(n => n * 2)
+.filter(n => n > 4);
+
+console.log(`With map and filter`);
+source4.subscribe(
+    value => console.log(`value after map: ${value}`),
+    e => console.log(`error: ${e}`),
+    () => console.log(`complete`)
+);
