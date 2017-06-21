@@ -1,6 +1,7 @@
 import {Observable} from "rxjs/Observable";
 import 'rxjs/add/observable/fromEvent';
-
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/filter';
 
 let source = Observable.fromEvent(document, "mousemove")
                         .map((e : MouseEvent) => {
@@ -8,7 +9,8 @@ let source = Observable.fromEvent(document, "mousemove")
                                 x: e.clientX,
                                 y: e.clientY
                             }
-                        });
+                        })
+                        .filter(value => value.x < 500);
 
 
 source.subscribe(
