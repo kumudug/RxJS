@@ -5,7 +5,8 @@ import 'rxjs/add/observable/from';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/filter';
 
-import './mouse_events'
+import './mouse_events';
+import './handling_requests';
 
 let numbers = [ 1, 5, 10 ];
 let source = Observable.from(numbers);
