@@ -12,3 +12,8 @@ Typings was installed using the following command which created the typings.json
 
 
 Typescript compiler config in - tsconfig.json
+
+
+## In order to get Fetch working
+
+
