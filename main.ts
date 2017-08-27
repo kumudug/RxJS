@@ -8,6 +8,8 @@ import 'rxjs/add/operator/filter';
 import './mouse_events';
 import './handling_requests';
 import './handling_requests_fetch_and_promises';
+import './handling_errors';
+import './handling_errors_retry_strategy';
 
 let numbers = [ 1, 5, 10 ];
 let source = Observable.from(numbers);
