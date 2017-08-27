@@ -22,7 +22,7 @@ export function load(url: string) {
     }).retryWhen(retryStrategy({ attempts: 3, delay: 1500 }));
 }
 
-function retryStrategy({attempts = 4, delay = 1000}) {
+export function retryStrategy({attempts = 4, delay = 1000} = {}) {
     //This gets the error being passed from the observable. In this instance it's the "xhr.statusText"
     return function (errors) {
         return errors.
